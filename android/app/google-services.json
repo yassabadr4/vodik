@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "542376057810",
+    "project_id": "vodik-ba669",
+    "storage_bucket": "vodik-ba669.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:542376057810:android:e4c89c1517141e3213860b",
+        "android_client_info": {
+          "package_name": "com.example.vodik"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCT42ofyN2BGNmqVUX429NR4mDBRSlIcJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:542376057810:android:ff5ff2a73b9aa74f13860b",
+        "android_client_info": {
+          "package_name": "com.example.vodik_vodik"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCT42ofyN2BGNmqVUX429NR4mDBRSlIcJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
