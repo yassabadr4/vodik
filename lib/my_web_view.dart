@@ -16,16 +16,19 @@ class _MyWebViewState extends State<MyWebView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: WebView(
-        initialUrl: 'https://vodik.vercel.app/',
-        gestureNavigationEnabled: true,
-        javascriptMode: JavascriptMode.unrestricted,
-        onWebViewCreated: (WebViewController webViewController) {
-          _controller = webViewController;
-        },
-        javascriptChannels: <JavascriptChannel>[
-          _getUserDataChannel(context),
-        ].toSet(),
+      body: SafeArea(
+        child: WebView(
+          initialUrl: 'https://vodik.vercel.app/',
+          gestureNavigationEnabled: true,
+          javascriptMode: JavascriptMode.unrestricted,
+          onWebViewCreated: (WebViewController webViewController) {
+            _controller = webViewController;
+            _disableZoom();
+          },
+          javascriptChannels: <JavascriptChannel>[
+            _getUserDataChannel(context),
+          ].toSet(),
+        ),
       ),
     );
 
@@ -38,6 +41,7 @@ class _MyWebViewState extends State<MyWebView> {
       },
     );
   }
+
 
   @override
   void initState() {
@@ -53,13 +57,18 @@ class _MyWebViewState extends State<MyWebView> {
     });
   }
 
-
+  void _disableZoom() {
+    // Disabling zoom using embedded JavaScript
+    _controller.runJavascript(
+        "document.querySelector('meta[name=viewport]')?.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0');");
+  }
+}
   void _cacheUserData(String userData) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString('user_data', userData);
     print('user_data $userData');
     // You can perform further actions like navigation or displaying a message here
   }
-}
+
 
 
