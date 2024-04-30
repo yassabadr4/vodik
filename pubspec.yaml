@@ -38,6 +38,7 @@ dependencies:
   webview_flutter: ^2.0.13
   firebase_core: ^2.30.1
   firebase_messaging: ^14.9.1
+  shared_preferences: ^2.0.8
 
 dev_dependencies:
   flutter_test:

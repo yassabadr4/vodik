@@ -13,16 +13,17 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(
-      const Duration(seconds: 4),
+      const Duration(seconds: 10),
       () async {
         await Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const MyWebView(),
+              builder: (context) => MyWebView(),
             ));
       },
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +32,15 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const SizedBox(
+              height: 200,
+            ),
             Image.asset('assets/images/iconApp.jpeg'),
+            const Spacer(),
+            const Text('Development by Otech Agency'),
+            const SizedBox(
+              height: 50,
+            )
           ],
         ),
       ),
